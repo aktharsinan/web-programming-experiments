@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f2f2f2;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 8px;
+        }
+
+        .box {
+            
+            border: 1px solid black;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>Login Page</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+    <hr>
+    <h2>Sign Up</h2>
+
+    <input type="text" id="newname" placeholder="Enter Name"><br>
+
+    <input type="email" id="email" placeholder="Enter Email"><br>
+
+    <input type="password" id="newpass" placeholder="Enter Password"><br>
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+    // Login Function
+    function login() {
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+        if (user == "" || pass == "") {
+            document.getElementById("message").innerHTML =
+            "Please fill all fields";
+        }
+        else {
+            document.getElementById("message").innerHTML =
+            "Login Successful!";
+        }
+    }
+    // Sign Up Function
+    function signup() {
+        let name = document.getElementById("newname").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("newpass").value;
+        if (name == "" || email == "" || pass == "") {
+            document.getElementById("result").innerHTML =
+            "Please fill all fields";
+        }
+        else if (pass.length < 6) {
+            document.getElementById("result").innerHTML =
+            "Password must be at least 6 characters";
+        }
+        else {
+            document.getElementById("result").innerHTML =
+            "Registration Successful!";
+        }
+    }
+</script>
+
+</body>
+</html>
